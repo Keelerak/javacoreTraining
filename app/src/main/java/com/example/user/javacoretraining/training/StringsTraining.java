@@ -16,7 +16,7 @@ import java.util.Arrays;
  * Доступна проверка тестированием @see StringsTrainingTest.
  */
 public class StringsTraining {
-
+//
     /**
      * Метод по созданию строки,
      * состоящей из нечетных символов
