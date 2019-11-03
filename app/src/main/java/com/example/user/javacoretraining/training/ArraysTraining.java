@@ -43,7 +43,8 @@ public class ArraysTraining {
      * @return максимальное число или 0
      */
     public int maxValue(int... values) {
-        //TODO: implement it
+        if (values.length == 0) return 0;
+
         return 0;
     }
 
