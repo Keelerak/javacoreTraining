@@ -4,6 +4,7 @@ import android.support.v4.content.res.TypedArrayUtils;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Набор тренингов по работе со строками в java.
@@ -44,21 +45,22 @@ public class StringsTraining {
      * вернуть пустой массив
      */
     public int[] getArrayLastSymbol(String text) {
-        ArrayList<Integer> placesSymb = new ArrayList<>();
-        int countSymb = 0;
+        ArrayList<Integer> placesSymb = new ArrayList<>(); // здесь индексы найденных символов
+        int countSymb = 0;// определяется количество повторов
         if(!text.isEmpty()){
             char c = text.charAt(text.length()-1);
-            for (int i = 0; i<text.length(); i++)
+            for (int i = 0; i<text.length()-1; i++)
                 if (c == text.charAt(i)) {
                     countSymb++;
                     placesSymb.add(i);
                 }
         }
-        int[] m = new int[placesSymb.size()];
+        int[] mas = new int[placesSymb.size()];
         for (int i = 0; i<placesSymb.size(); i++){
-            m[i] = placesSymb.get(i);
+            mas[i] = placesSymb.get(i);
         }
-        return m;
+
+        return mas;
     }
 
     /**
