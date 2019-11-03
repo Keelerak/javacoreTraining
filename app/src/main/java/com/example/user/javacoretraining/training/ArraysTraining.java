@@ -44,8 +44,12 @@ public class ArraysTraining {
      */
     public int maxValue(int... values) {
         if (values.length == 0) return 0;
-
-        return 0;
+        int maxVal = values[0];
+        for (int i = 0; i<values.length; i++){
+            if (maxVal< values[i])
+                maxVal = values[i];
+        }
+        return maxVal;
     }
 
     /**
@@ -56,8 +60,10 @@ public class ArraysTraining {
      * @return входящий массив в обратном порядке
      */
     public int[] reverse(int[] array) {
-        //TODO: implement it
-        return new int[]{};
+        int [] reversed = new int[array.length];
+        for (int i = 0; i<array.length; i++)
+            reversed[i] = array[array.length-1 - i];
+        return reversed;
     }
 
     /**
@@ -71,8 +77,13 @@ public class ArraysTraining {
      * @return массив из чисел Фибоначчи
      */
     public int[] fibonacciNumbers(int numbersCount) {
-        //TODO: implement it
-        return new int[]{};
+        if (numbersCount < 1)return new int[]{};
+        int[] fibArray = new int[numbersCount];
+        fibArray[0] = 1;
+        fibArray[1] = 2;
+        for (int i = 2; i<fibArray.length-1; i++)
+            fibArray[i] = fibArray[i-1]+fibArray[i-2];
+        return fibArray;
     }
 
     /**
@@ -84,7 +95,19 @@ public class ArraysTraining {
      * элементов
      */
     public int maxCountSymbol(int[] array) {
-        //TODO: implement it
-        return 0;
+        int countSymb = 0;
+        if(array.length == 1) return 1;
+        else{
+            for (int i = 0; i < array.length; i++) {
+                int countEl = 0;
+                for (int j = i; j < array.length; j++){
+                    if (array[i] == array[j]) countEl++;
+                }
+                if (countEl > countSymb) countSymb = countEl;
+            }
+        }
+
+
+        return countSymb;
     }
 }
