@@ -20,8 +20,13 @@ public class ElementaryTraining {
      * @return среднее значение для введенных чисел
      */
     public double averageValue(int firstValue, int secondValue) {
-        //TODO: implement it
-        return 0;
+        int av = 0;
+        if (firstValue == 0 && secondValue == 0)
+            return 0;
+        else {
+            av = ((firstValue + secondValue)/2);
+        }
+        return av;
     }
 
     /**
@@ -34,8 +39,8 @@ public class ElementaryTraining {
      * @return сумма новых трех чисел
      */
     public double complicatedAmount(int firstValue, int secondValue, int thirdValue) {
-        //TODO: implement it
-        return 0;
+        double Sum = (firstValue*2) + (secondValue - 3) + (thirdValue * thirdValue);
+        return Sum;
     }
 
     /**
@@ -47,7 +52,11 @@ public class ElementaryTraining {
      * @return новое значение
      */
     public int changeValue(int value) {
-        //TODO: implement it
+        if (value > 3){
+            value = value + 10;
+        }else {
+            value = value - 10;
+        }
         return value;
     }
 
@@ -62,8 +71,18 @@ public class ElementaryTraining {
      * @return новое число
      */
     public int swapNumbers(int value) {
-        //TODO: implement it
-        return 0;
+        String sN = Integer.toString(value);
+        if (value < 10){
+            return value;
+        }else {
+            char[] chars = sN.toCharArray();
+            char first = chars[0];
+            chars[0] = chars[chars.length-1];
+            chars[chars.length-1] = first;
+            sN = new String(chars);
+           // value = Integer.parseInt(sN);
+        }
+        return Integer.parseInt(sN);
     }
 
     /**
@@ -77,7 +96,18 @@ public class ElementaryTraining {
      * @return новое число
      */
     public int zeroEvenNumber(int value) {
-        //TODO: implement it
-        return 0;
+        String sN = Integer.toString(value);
+        if (value < 10){
+            return value;
+        }else{
+            char[] chars = sN.toCharArray();
+            for (int i = 0; i < chars.length; i++ ){
+                if (Character.getNumericValue(chars[i])%2 == 0){
+                    chars[i] = '0';
+                }else {chars[i] = chars[i];}
+            }
+            sN = new String(chars);
+        }
+        return Integer.parseInt(sN);
     }
 }
